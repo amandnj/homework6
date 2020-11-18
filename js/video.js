@@ -11,7 +11,7 @@ var originalbutton = document.getElementById("original")
 
 
 window.addEventListener("load", function() {
-	document.getElementById(video).load();
+	document.getElementById(video).preload();
 });
 
 playbutton.addEventListener("click", function() {
@@ -25,57 +25,33 @@ pausebutton.addEventListener("click", function() {
 });
 
 slowerbutton.addEventListener("click", function(){
-	video.playbackRate = 10%;
+	video.playbackRate = .10
 	console.log("Slow Down");
 });
 
 fasterbutton.addEventListener("click", function(){
-	video.playbackRate = 10%;
+	video.playbackRate = 1.1
 	console.log(video.playbackRate);
 });
 
 skipbutton.addEventListener("click", function(){
-	video.currentTime(video.currentTime() + 5);
+	video.currentTime+=5;
 	console.log(video.currentTime);
 });
 
 mutebutton.addEventListener("click", function(){
-	if(video.muted){
-		video.muted = false;
-		mutebutton.innerHTML = "Mute";
-	} 
-	else {
-		video.muted = true;
-		mutebutton.innerHTML = "Unmute";
-	}
+	video.muted();
+	mutebutton.innerHTML = "Mute";	
 });
 
-var volumeControl = document.getElementById("volumeSlider");
-var setVolume = function(){
-	currentVol.innerHTML=(video.volume = this.value / 100;)
-};
-volumeControl.addEventListener('change',setVolume);
-volumeControl.addEventListener('input',setVolume);
+mutebutton.removeEventListener("click", video.muted()).innerHTML = "Unmute";
 
-var bgCanvas= document.createElement("canvas");
-function makeItGrey() {
-    bgContext.drawImage(video, 0, 0, w, h);
-    var pixelData = bgContext.getImageData(0, 0, w, h);
-    for (var i = 0; i < pixelData.data.length; i += 4 ) {
-        var r = pixelData.data[i];
-        var g = pixelData.data[i+1];
-        var b = pixelData.data[i+2];
-        var averageColour = (r + g + b) / 3;
-        pixelData.data[i] = averageColour;
-        pixelData.data[i+1] = averageColour;
-        pixelData.data[i+2] = averageColour;
-    }
-    context.putImageData(pixelData, 0, 0);
-}
+document.getElementById("volume").addEventListener("volumechange", function(){
+	video.volume();
+	document.getElementById("volume").innerHTML(video.volume());
+	console.log(video.volume());
 
-oldbutton.addEventListener("click", function() {
-    video.setInterval(makeItGrey(), 33);
-}, false);
+});
 
 originalbutton.addEventListener("click", function(){
 	document.getElementById(video).load();
