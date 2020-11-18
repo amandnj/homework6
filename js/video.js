@@ -11,7 +11,7 @@ var originalbutton = document.getElementById("original")
 
 
 window.addEventListener("load", function() {
-	document.getElementById(video).preload();
+	document.getElementById(video).load();
 });
 
 playbutton.addEventListener("click", function() {
@@ -25,7 +25,7 @@ pausebutton.addEventListener("click", function() {
 });
 
 slowerbutton.addEventListener("click", function(){
-	video.playbackRate = .10
+	video.playbackRate = 0.9
 	console.log("Slow Down");
 });
 
@@ -44,7 +44,10 @@ mutebutton.addEventListener("click", function(){
 	mutebutton.innerHTML = "Mute";	
 });
 
-mutebutton.removeEventListener("click", video.muted()).innerHTML = "Unmute";
+mutebutton.addEventListener("click", function(){
+	video.muted = false;
+	mutebutton.innerHTML = "Unmute";
+});
 
 document.getElementById("volume").addEventListener("volumechange", function(){
 	video.volume();
@@ -54,5 +57,9 @@ document.getElementById("volume").addEventListener("volumechange", function(){
 });
 
 originalbutton.addEventListener("click", function(){
-	document.getElementById(video).load();
+	video.load();
 });
+
+oldbutton.addEventListener("click", function(){
+	video.style.filter = "grayscale(100%)";
+})
