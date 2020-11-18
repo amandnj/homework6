@@ -22,7 +22,7 @@ pausebutton.addEventListener("click", function() {
 });
 
 slowerbutton.addEventListener("click", function(){
-	video.playbackRate = 0.5;
+	video.playbackRate = 1.0;
 	console.log("Slow Down");
 });
 
@@ -32,19 +32,17 @@ fasterbutton.addEventListener("click", function(){
 });
 
 skipbutton.addEventListener("click", function(){
-	video.currentTime(video.currentTime() + 15);
+	video.currentTime += 15;
 	console.log("Skip Ahead");
 });
 
 mutebutton.addEventListener("click", function(){
-	if (video.mute == false) 
-	{
-		document.getElementById(video).muted = true;
+	
+	if (video.muted = false){
+		video.muted=true;
 	}
-	else 
-	{
-		video.mute = true 
-		document.getElementById(video).muted = false;
+	else (video.muted = true){
+		video.muted=false;
 	}
 	console.log("Muted")
 });
