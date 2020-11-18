@@ -11,7 +11,7 @@ var originalbutton = document.getElementById("original")
 
 
 window.addEventListener("load", function() {
-	document.getElementById(video).load();
+	video.load();
 });
 
 playbutton.addEventListener("click", function() {
