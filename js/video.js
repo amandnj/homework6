@@ -1,30 +1,30 @@
-var Video
+var video = document.getElementById("myVideo");
 
 window.addEventListener("load", function() {
-	video = document.querySelector("#myVideo");
+	video = document.querySelector(video);
 });
 
 document.getElementById('#play').addEventListener("click", function(){
-	myVideo.play();
+	video.play();
 	console.log("Play Video");
 });
 
 document.getElementById('#pause').addEventListener("click", function(){
-	myVideo.pause();
+	video.pause();
 	console.log("Pause Video");
 });
 
 document.getElementById('#faster').addEventListener("click", function(){
-	myVideo.playbackRate = 2.0;
+	video.playbackRate = 2.0;
 	console.log("Speed Up");
 });
 
 document.getElementById('#slower').addEventListener("click", function(){
-	myVideo.playbackRate = 0.5;
+	video.playbackRate = 0.5;
 	console.log("Slow Down");
 });
 
 document.getElementById('#skip').addEventListener("click", function(){
-	myVideo.currentTime(myVideo.currentTime() + 15);
+	video.currentTime(myVideo.currentTime() + 15s);
 	console.log("Skip Ahead");
 });
