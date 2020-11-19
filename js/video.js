@@ -37,9 +37,10 @@ document.getElementById("mute").addEventListener("click", function MuteUnmutevid
 		document.getElementById("mute").innerHTML = video.muted ? 'Unmute' : 'Mute';
 	});
 
-document.querySelector("#volumeSlider").addEventListener("click", function(){
+document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(this);
 	console.log(this.value);
+	video.volume += (this.value);
 	let vol = (this.value);
 	document.querySelector("#volume").innerHTML= vol + "%"
 	console.log(vol);
@@ -47,8 +48,7 @@ document.querySelector("#volumeSlider").addEventListener("click", function(){
 
 
 document.getElementById("old").addEventListener("click", function(){
-	let style = document.getElementsByClassName(".oldTime");
-	video.style = style;
+	video.style.display = document.getElementsByClassName(".oldTime");
 })
 
 document.getElementById("original").addEventListener("click", function(){
