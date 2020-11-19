@@ -45,15 +45,9 @@ skipbutton.addEventListener("click", function(){
 mutebutton.addEventListener("click", function(){
 	if (video.muted() = false){
 		video.muted() = true;
+		mutebutton.innerHTML("Mute");
 	}
-	else if (video.muted() = true) {
-		mutebutton.innerHTML = "Mute";
-	}	
-	else (video.muted() = false) {
-		mutebutton.innerHTML = "Unmute";
-	}
-});
-
+})
 
 document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(this);
@@ -63,10 +57,10 @@ document.querySelector("#volumeSlider").addEventListener("change", function(){
 });
 
 originalbutton.removeEventListener("click", function(){
-	document.getElementById("myVideo").style.filter = "grayscale(100%)";
+	video.style.filter = "grayscale(100%)";
 });
 
 oldbutton.addEventListener("click", function(){
-	document.getElementById("myVideo").style.filter = "grayscale(100%)";
+	video.style.filter = "grayscale(100%)";
 })
 
