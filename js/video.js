@@ -28,12 +28,12 @@ pausebutton.addEventListener("click", function() {
 });
 
 slowerbutton.addEventListener("click", function(){
-	video.playbackRate = 0.9;
+	video.playbackRate = video.playbackRate*0.9;
 	console.log("Slow Down");
 });
 
 fasterbutton.addEventListener("click", function(){
-	video.playbackRate = 1.1;
+	video.playbackRate = video.playbackRate*1.1;
 	console.log(video.playbackRate);
 });
 
