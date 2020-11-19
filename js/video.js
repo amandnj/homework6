@@ -47,7 +47,8 @@ document.querySelector("#volumeSlider").addEventListener("click", function(){
 
 
 document.getElementById("old").addEventListener("click", function(){
-	video.style.filter = document.querySelector(".oldTime");
+	let style = document.getElementsByClassName(".oldTime");
+	video.style.filter = style;
 })
 
 document.getElementById("original").addEventListener("click", function(){
