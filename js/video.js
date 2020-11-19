@@ -40,13 +40,13 @@ document.getElementById("mute").addEventListener("click", function MuteUnmutevid
 document.querySelector("#volumeSlider").addEventListener("click", function(){
 	console.log(this);
 	console.log(this.value);
-	let vol = document.querySelector("#volumeSlider").innerHTML= video.volume * 100 + "%"
+	let vol = document.querySelector("#volume").innerHTML= video.volume * 100 + "%"
 	console.log(vol)
 });
 
 
 document.getElementById("old").addEventListener("click", function(){
-	video.style.filter = document.getElementsByTagName("style").getElementById(".oldTime");
+	video.style.filter = getElementById(".oldTime");
 })
 
 document.getElementById("original").addEventListener("click", function(){
