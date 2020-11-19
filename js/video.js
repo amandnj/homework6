@@ -40,15 +40,15 @@ document.getElementById("mute").addEventListener("click", function MuteUnmutevid
 document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(this);
 	console.log(this.value);
-	video.volume += (this.value);
 	let vol = (this.value);
 	document.querySelector("#volume").innerHTML= vol + "%"
-	console.log(vol);
+	console.log(vol)
+	video.volume = this.value / 100;
 });
 
 
 document.getElementById("old").addEventListener("click", function(){
-	video.style.display = document.getElementsByClassName(".oldTime");
+	video.style.transform = document.getElementsByClassName(".oldTime");
 })
 
 document.getElementById("original").addEventListener("click", function(){
