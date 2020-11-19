@@ -34,7 +34,7 @@ document.getElementById("skip").addEventListener("click", function(){
 
 document.getElementById("mute").addEventListener("click", function MuteUnmutevideo() {
 		video.muted = !video.muted;
-		document.getElementById("mute").innerHTML = video.muted ? 'Mute' : 'Unmute';
+		document.getElementById("mute").innerHTML = video.muted ? 'Unmute' : 'Mute';
 	});
 
 document.querySelector("#volumeSlider").addEventListener("change", function(){
