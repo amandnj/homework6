@@ -38,12 +38,10 @@ document.getElementById("mute").addEventListener("click", function MuteUnmutevid
 	});
 
 document.querySelector("#volumeSlider").addEventListener("change", function(){
-	console.log(this);
-	console.log(this.value);
-	let vol = (this.value);
-	document.querySelector("#volume").innerHTML= vol + "%"
-	console.log(vol)
-	video.volume = video.volume*0.9
+	let vol = this.value/100;
+	video.volume = vol;
+	document.querySelector("#volume").innerHTML = this.value + "%";
+	console.log(this.value());
 });
 
 
