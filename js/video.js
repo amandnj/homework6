@@ -43,7 +43,7 @@ document.querySelector("#volumeSlider").addEventListener("change", function(){
 	let vol = (this.value);
 	document.querySelector("#volume").innerHTML= vol + "%"
 	console.log(vol)
-	video.volume = this.value / 100;
+	video.volume = video.volume*0.9
 });
 
 
