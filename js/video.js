@@ -40,8 +40,8 @@ document.getElementById("mute").addEventListener("click", function MuteUnmutevid
 document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(this);
 	console.log(this.value);
-	document.querySelector("#volume").innerHTML= video.volume * 100;
-	console.log(vol.value());
+	let volu = document.querySelector("#volume").innerHTML= video.volume * 100;
+	console.log(volu.value());
 
 });
 
