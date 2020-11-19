@@ -41,11 +41,12 @@ document.querySelector("#volumeSlider").addEventListener("click", function(){
 	console.log(this);
 	console.log(this.value);
 	let vol = document.querySelector("#volumeSlider").innerHTML= video.volume * 100 + "%"
+	console.log(vol)
 });
 
 
 document.getElementById("old").addEventListener("click", function(){
-	video.style.filter = document.querySelector("style.oldTime");
+	video.style.filter = document.getElementsByTagName("style").getElementById(".oldTime");
 })
 
 document.getElementById("original").addEventListener("click", function(){
