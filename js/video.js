@@ -13,17 +13,18 @@ var currentvolume = document.querySelector("myVideo").volume;
 
 window.addEventListener("load", function() {
 	video.load();
+	console.log("Starting");
+	console.log(video.volume)
 });
 
 playbutton.addEventListener("click", function() {
 	video.play();
-	video.volume();
-	console.log(currentVol);
+	let vol = document.querySelector("#volume").innerHTML= video.volume * 100 + "%"
 });
 
 pausebutton.addEventListener("click", function() {
 	video.pause();
-	console.log("Paused Video");
+	console.log("Pause Video");
 });
 
 slowerbutton.addEventListener("click", function(){
@@ -42,19 +43,27 @@ skipbutton.addEventListener("click", function(){
 });
 
 mutebutton.addEventListener("click", function(){
-	video.muted() = true;
-	mutebutton.innerHTML = "Mute";	
-	video.muted() = false;
-	mutebutton.innerHTML = "Unmute"
+	if (video.muted() = false){
+		video.muted() = true;
+	}
+	else if (video.muted() = true) {
+		mutebutton.innerHTML = "Mute";
+	}	
+	else (video.muted() = false) {
+		mutebutton.innerHTML = "Unmute";
+	}
 });
 
 
-document.getElementById("volume").addEventListener("click", function(){
-	currentvolume.innerHTML(currentvolume);
+document.querySelector("#volumeSlider").addEventListener("change", function(){
+	console.log(this);
+	console.log(this.value);
+	let vol = document.querySelector("#volume").innerHTML= video.volume;
+
 });
 
-originalbutton.addEventListener("click", function(){
-	document.getElementById("myVideo");
+originalbutton.removeEventListener("click", function(){
+	document.getElementById("myVideo").style.filter = "grayscale(100%)";
 });
 
 oldbutton.addEventListener("click", function(){
